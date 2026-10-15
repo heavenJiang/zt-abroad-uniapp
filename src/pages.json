@@ -23,6 +23,24 @@
       "style": {
         "navigationBarTitleText": "隐私政策"
       }
+    },
+    {
+      "path": "pages/quick/index",
+      "style": {
+        "navigationBarTitleText": "30 秒快测"
+      }
+    },
+    {
+      "path": "pages/quick/result",
+      "style": {
+        "navigationBarTitleText": "快测结果"
+      }
+    },
+    {
+      "path": "pages/plan/index",
+      "style": {
+        "navigationBarTitleText": "我的选校单"
+      }
     }
   ],
   "globalStyle": {

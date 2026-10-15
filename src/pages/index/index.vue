@@ -23,6 +23,18 @@
       <view v-if="current" class="mode">{{ modeText(current) }}</view>
     </view>
 
+    <!-- 入口工具：不想答完整问卷时先快测 -->
+    <view v-if="current && current.method === 'tiered'" class="section">
+      <view v-for="t in LANDING.tools" :key="t.url" class="tool" @click="openTool(t)">
+        <view>
+          <view class="benefit-title">{{ t.title }}</view>
+          <view class="benefit-desc">{{ t.desc }}</view>
+        </view>
+        <text class="arrow">›</text>
+      </view>
+      <view class="link plan-link" @click="openPlan">我的选校单</view>
+    </view>
+
     <!-- 测完你会得到 -->
     <view class="section">
       <view class="section-title">测完你会得到</view>
@@ -140,6 +152,14 @@ function continueAssessment() {
 
 function consultant() {
   uni.showModal({ title: "顾问评估", content: "该阶段的选校由顾问评估，预约功能即将上线。", showCancel: false })
+}
+
+function openTool(t) {
+  uni.navigateTo({ url: t.url + "?degree=" + degree.value })
+}
+
+function openPlan() {
+  uni.navigateTo({ url: "/pages/plan/index" })
 }
 
 function openPolicy() {
@@ -302,5 +322,18 @@ onShow(async () => {
 }
 .retry {
   margin-left: 16rpx;
+}
+.tool {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.arrow {
+  font-size: 44rpx;
+  color: $abr-color-text-secondary;
+}
+.plan-link {
+  margin-top: 20rpx;
+  font-size: 26rpx;
 }
 </style>
