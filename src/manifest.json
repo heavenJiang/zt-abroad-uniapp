@@ -1,0 +1,24 @@
+{
+  "name": "zt-abroad-uniapp",
+  "appid": "",
+  "description": "留学智能体平台 C 端",
+  "versionName": "0.1.0",
+  "versionCode": "100",
+  "vueVersion": "3",
+  "h5": {
+    "title": "我的申请规划",
+    "router": {
+      "mode": "history",
+      "base": "/"
+    }
+  },
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": true,
+      "es6": true,
+      "minified": true
+    },
+    "usingComponents": true
+  }
+}
