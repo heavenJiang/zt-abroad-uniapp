@@ -1,7 +1,7 @@
 /**
  * 渠道码与内容编号：从入口链接（H5 地址参数 / 小程序启动参数）读取，透传给后端
  *
- * 链接参数：ch（或 channel）= 渠道码，ct（或 content）= 内容编号；格式与后端一致：字母、数字、_、-，最多 32 位，格式不对忽略。
+ * 链接参数：ch（或 channel）= 渠道码，ct（或 content）= 内容编号；小程序码用 scene=ch%3Dxhs%26ct%3Dn1；格式与后端一致：字母、数字、_、-，最多 32 位，格式不对忽略。
  * 首次进入的渠道（first touch）只记一次，用于创建访客；最近一次带渠道的进入（last touch）用于创建测评等转化动作。
  */
 
@@ -22,11 +22,37 @@ function valid(v) {
  * @returns {{channelCode: string|null, contentCode: string|null}}
  */
 export function pickCodes(query) {
-  const q = query || {}
+  const q = { ...parseScene(query && query.scene), ...(query || {}) }
   return {
     channelCode: valid(q.ch) || valid(q.channel),
     contentCode: valid(q.ct) || valid(q.content)
   }
+}
+
+/**
+ * 小程序码的 scene 参数（最多 32 个字符），约定格式 ch=xhs&ct=n1；微信传入时已做 URL 编码
+ *
+ * @param {string} scene
+ * @returns {Record<string, string>}
+ */
+export function parseScene(scene) {
+  if (typeof scene !== "string" || !scene) {
+    return {}
+  }
+  let text = scene
+  try {
+    text = decodeURIComponent(scene)
+  } catch (e) {
+    // 编码异常时按原文解析
+  }
+  const out = {}
+  text.split("&").forEach(pair => {
+    const i = pair.indexOf("=")
+    if (i > 0) {
+      out[pair.slice(0, i)] = pair.slice(i + 1)
+    }
+  })
+  return out
 }
 
 /**
