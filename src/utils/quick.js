@@ -4,6 +4,9 @@
  * 结果文案只使用后端返回的档位、代表校与差距；不出现录取概率、分数线等内部数字。
  */
 
+/** 本机已同意的隐私政策版本（入口工具据此自动勾选；后端仍按版本校验） */
+export const CONSENT_KEY = "abr_consent_version"
+
 /** 档位名称 */
 export const TIER_LABELS = {
   reach: "冲刺",

@@ -328,6 +328,11 @@ onShow(async () => {
   align-items: center;
   justify-content: space-between;
 }
+.tool + .tool {
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #f0f1f3;
+}
 .arrow {
   font-size: 44rpx;
   color: $abr-color-text-secondary;

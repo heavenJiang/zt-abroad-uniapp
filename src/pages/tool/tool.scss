@@ -1,0 +1,127 @@
+/* 查询类入口工具页面的公共样式 */
+.page {
+  padding: 40rpx 32rpx 64rpx;
+}
+.title {
+  font-size: 44rpx;
+  font-weight: 700;
+}
+.muted,
+.hint,
+.footer {
+  margin-top: 8rpx;
+  color: $abr-color-text-secondary;
+  font-size: 26rpx;
+}
+.small {
+  font-size: 24rpx;
+}
+.hint,
+.footer {
+  text-align: center;
+}
+.footer {
+  margin-top: 32rpx;
+  font-size: 22rpx;
+}
+.card {
+  margin-top: 24rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border-radius: $abr-radius;
+}
+.q {
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+.input {
+  height: 80rpx;
+  padding: 0 24rpx;
+  border-radius: $abr-radius;
+  background: #f2f3f5;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.grow {
+  flex: 1;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+.chip {
+  padding: 12rpx 28rpx;
+  border-radius: 999rpx;
+  background: #f2f3f5;
+  font-size: 26rpx;
+}
+.chip.active {
+  background: $abr-color-primary;
+  color: #ffffff;
+}
+.chip.closed:not(.active) {
+  color: #a0a4ab;
+}
+.soon {
+  margin-left: 8rpx;
+  font-size: 20rpx;
+}
+.notice {
+  margin-top: 24rpx;
+  padding: 16rpx 24rpx;
+  border-radius: $abr-radius;
+  background: #fff4e5;
+  color: #b25e09;
+  font-size: 26rpx;
+}
+.country {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+.program {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #f0f1f3;
+}
+.program-main {
+  flex: 1;
+  min-width: 0;
+}
+.school {
+  font-weight: 600;
+}
+.name {
+  font-size: 26rpx;
+}
+.line {
+  margin-top: 4rpx;
+  font-size: 24rpx;
+  color: $abr-color-text-secondary;
+}
+.add {
+  flex: none;
+  margin-left: 16rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 999rpx;
+  border: 2rpx solid $abr-color-primary;
+  color: $abr-color-primary;
+  font-size: 24rpx;
+}
+.add.done {
+  border-color: #c9cdd4;
+  color: $abr-color-text-secondary;
+}
+.primary {
+  margin-top: 32rpx;
+  background: $abr-color-primary;
+  color: #ffffff;
+  border-radius: 999rpx;
+}
+.retry {
+  margin-left: 16rpx;
+}

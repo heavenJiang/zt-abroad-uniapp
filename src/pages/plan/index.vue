@@ -26,7 +26,7 @@
           <view class="remove" @click="remove(i)">移除</view>
         </view>
       </view>
-      <view class="muted small note">档位为加入时快测的结果；完整测评后会按你的完整背景更新。</view>
+      <view class="muted small note">档位来自加入时的快测结果，其他工具加入的项目暂不分档；完整测评后会按你的完整背景更新。</view>
     </template>
   </view>
 </template>

@@ -28,3 +28,24 @@ export function runQuick({ answers, policyVersion, degree }) {
 export function searchUniversity(keyword) {
   return request("/app/cn-university/search", { data: { keyword } }).then(res => res.data || [])
 }
+
+// 查询类工具（recognition 本校认可度 / ielts 雅思够不够 / open 现在还能申）输入页
+export function getToolForm(tool, degree) {
+  return request("/app/tool/" + tool + "/form", { data: { degree } }).then(res => res.data)
+}
+
+// 查询类工具计算
+export function runTool(tool, { answers, policyVersion, degree }) {
+  const touch = lastTouch(storage)
+  return request("/app/tool/" + tool, {
+    method: "POST",
+    data: {
+      answers,
+      policyVersion: policyVersion || undefined,
+      degree,
+      channelCode: touch.channelCode || undefined,
+      contentCode: touch.contentCode || undefined,
+      clientPlatform: PLATFORM
+    }
+  }).then(res => res.data)
+}

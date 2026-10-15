@@ -41,6 +41,24 @@
       "style": {
         "navigationBarTitleText": "我的选校单"
       }
+    },
+    {
+      "path": "pages/tool/recognition",
+      "style": {
+        "navigationBarTitleText": "本校认可度"
+      }
+    },
+    {
+      "path": "pages/tool/ielts",
+      "style": {
+        "navigationBarTitleText": "雅思够不够"
+      }
+    },
+    {
+      "path": "pages/tool/open",
+      "style": {
+        "navigationBarTitleText": "现在还能申"
+      }
     }
   ],
   "globalStyle": {

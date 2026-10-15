@@ -14,7 +14,10 @@ export const LANDING = {
   steps: ["回答 5 步问题（无需手机号）", "微信登录保存", "查看你的选校报告"],
   // 入口工具（只在引擎已实现的学段显示）
   tools: [
-    { title: "30 秒快测", desc: "只填 4 项，马上看冲 / 稳 / 保和代表院校", url: "/pages/quick/index" }
+    { title: "30 秒快测", desc: "只填 4 项，马上看冲 / 稳 / 保和代表院校", url: "/pages/quick/index" },
+    { title: "本校认可度", desc: "各国家 / 地区项目是否接收你的学校、均分要求多少", url: "/pages/tool/recognition" },
+    { title: "雅思够不够", desc: "输入成绩，看哪些项目已达标、还差多少", url: "/pages/tool/ielts" },
+    { title: "现在还能申", desc: "按截止日排序，本季仍开放的项目", url: "/pages/tool/open" }
   ],
   disclaimer: "结果由选校引擎按公开要求计算，仅供参考，不代表录取承诺。"
 }
